@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwesomeLibrary", "AwesomeLibrary\AwesomeLibrary.csproj", "{EC129957-11DD-4949-B8B3-65F12E557328}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacheDemo1", "CacheDemo1\CacheDemo1.csproj", "{FF268917-ED43-49D2-97F0-04447E6EA01A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EC129957-11DD-4949-B8B3-65F12E557328}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC129957-11DD-4949-B8B3-65F12E557328}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC129957-11DD-4949-B8B3-65F12E557328}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC129957-11DD-4949-B8B3-65F12E557328}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF268917-ED43-49D2-97F0-04447E6EA01A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF268917-ED43-49D2-97F0-04447E6EA01A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF268917-ED43-49D2-97F0-04447E6EA01A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF268917-ED43-49D2-97F0-04447E6EA01A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
