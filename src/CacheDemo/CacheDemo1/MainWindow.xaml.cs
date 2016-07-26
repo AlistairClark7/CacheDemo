@@ -41,6 +41,7 @@ namespace CacheDemo1
                             .WithDatabase(0)
                             .WithEndpoint("localhost", 6379);
                     })
+                    .WithJsonSerializer()
                     .WithMaxRetries(1000)
                     .WithRetryTimeout(100)
                     .WithRedisBackplane("redis")
@@ -48,6 +49,12 @@ namespace CacheDemo1
             });
 
             AwesomeClasses = new ObservableCollection<AwesomeClass>();
+
+            AwesomeCache.OnAdd += (sender, args) =>
+            {
+                AwesomeClasses.Add(AwesomeCache.Get(args.Key));
+            };
+            DataContext = this;
         }
 
         public ObservableCollection<AwesomeClass> AwesomeClasses { get; set; }

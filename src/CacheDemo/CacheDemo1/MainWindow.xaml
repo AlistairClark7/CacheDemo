@@ -8,7 +8,7 @@
         Title="MainWindow" Height="393.333" Width="697.667">
     <Grid>
         <local:CrudControl Margin="0,0,-6,0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="696"></local:CrudControl>
-        <DataGrid x:Name="dataGrid" Margin="10,67,10,10"/>
+        <DataGrid x:Name="dataGrid" Margin="10,67,10,10" ItemsSource="{Binding AwesomeClasses}" IsReadOnly="True"/>
 
     </Grid>
 </Window>

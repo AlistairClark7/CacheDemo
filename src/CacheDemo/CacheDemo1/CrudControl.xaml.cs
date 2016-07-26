@@ -42,6 +42,7 @@ namespace CacheDemo1
                 SomethingAwesome = Something
             };
 
+            MainWindow.AwesomeCache.Add(Key, awesome);
         }
     }
 }
