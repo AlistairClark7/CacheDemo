@@ -12,7 +12,7 @@
         <TextBox x:Name="textBox1" Height="23" Margin="0,14,284,0" TextWrapping="Wrap" Text="{Binding Level, FallbackValue=1}" VerticalAlignment="Top" HorizontalAlignment="Right" Width="120"/>
         <TextBox x:Name="textBox2" Height="23" Margin="0,14,16,0" TextWrapping="Wrap" Text="{Binding Something, FallbackValue=Oh Wow}" VerticalAlignment="Top" HorizontalAlignment="Right" Width="120"/>
         <Label x:Name="label2" Content="Something Awesome" Margin="0,11,141,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="122"/>
-        <Button x:Name="getButton" Content="Get" Margin="0,42,256,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75"/>
+        <Button x:Name="getButton" Content="Get" Margin="0,42,256,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Click="getButton_Click"/>
         <Button x:Name="createButton" Content="Create" Margin="0,42,176,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Click="createButton_Click"/>
         <Button x:Name="updateButton" Content="Update" Margin="0,42,96,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75"/>
         <Button x:Name="deleteButton" Content="Delete" Margin="0,42,16,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75"/>

@@ -26,8 +26,6 @@ namespace CacheDemo1
             InitializeComponent();
             DataContext = this;
             Key = "AwesomeKey";
-            Level = 1;
-            Something = "Oh Wow";
         }
 
         public string Key { get; set; }
@@ -43,6 +41,11 @@ namespace CacheDemo1
             };
 
             MainWindow.AwesomeCache.Add(Key, awesome);
+        }
+
+        private void getButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.AwesomeCache.Get(Key);
         }
     }
 }
