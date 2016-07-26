@@ -23,14 +23,14 @@ namespace CacheDemo1
     /// </summary>
     public partial class MainWindow : Window
     {
-        private ICacheManager<AwesomeClass> _awesomeCache;
+        public static ICacheManager<AwesomeClass> AwesomeCache;
         
 
         public MainWindow()
         {
             InitializeComponent();
 
-            _awesomeCache = CacheFactory.Build<AwesomeClass>("myCache", settings =>
+            AwesomeCache = CacheFactory.Build<AwesomeClass>("myCache", settings =>
             {
                 settings
                     .WithSystemRuntimeCacheHandle("inProcessCache")
