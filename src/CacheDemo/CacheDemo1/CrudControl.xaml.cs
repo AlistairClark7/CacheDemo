@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using AwesomeLibrary;
+using CacheDemo1.ViewModel;
 
 namespace CacheDemo1
 {
@@ -21,31 +22,60 @@ namespace CacheDemo1
     /// </summary>
     public partial class CrudControl : UserControl
     {
+        private AwesomeClassViewModel _viewModel;
+
         public CrudControl()
         {
             InitializeComponent();
-            DataContext = this;
-            Key = "AwesomeKey";
+            _viewModel = new AwesomeClassViewModel {Key = "AwesomeKey"};
+            DataContext = _viewModel;
         }
 
-        public string Key { get; set; }
-        public int Level { get; set; }
-        public string Something { get; set; }
+        private void Reset()
+        {
+            _viewModel.Level = default(int);
+            _viewModel.Something = default(string);
+        }
 
         private void createButton_Click(object sender, RoutedEventArgs e)
         {
-            var awesome = new AwesomeClass
-            {
-                AwesomenessLevel = Level,
-                SomethingAwesome = Something
-            };
+            var awesome = _viewModel.ToAwesomeClass();
+            var success = MainWindow.AwesomeCache.Add(_viewModel.Key, awesome);
 
-            MainWindow.AwesomeCache.Add(Key, awesome);
+            if (!success)
+            {
+                MessageBox.Show(string.Format("Item with key '{0}' already exists", _viewModel.Key));
+            }
         }
 
         private void getButton_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.AwesomeCache.Get(Key);
+            Reset();
+            
+            var awesome = MainWindow.AwesomeCache.Get(_viewModel.Key);
+
+            if(awesome == null)
+                return;
+
+            _viewModel.Level = awesome.AwesomenessLevel;
+            _viewModel.Something = awesome.SomethingAwesome;
+        }
+
+        private void updateButton_Click(object sender, RoutedEventArgs e)
+        {
+            var awesome = _viewModel.ToAwesomeClass();
+            var result = MainWindow.AwesomeCache.Update(_viewModel.Key, _ => awesome);
+
+            if (result == null)
+            {
+                MessageBox.Show(string.Format("Item with key '{0}' does not exist", _viewModel.Key));
+            }
+        }
+
+        private void deleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.AwesomeCache.Remove(_viewModel.Key);
+            Reset();
         }
     }
 }

@@ -48,15 +48,7 @@ namespace CacheDemo1
                     .WithRedisCacheHandle("redis", true);
             });
 
-            AwesomeClasses = new ObservableCollection<AwesomeClass>();
-
-            AwesomeCache.OnAdd += (sender, args) =>
-            {
-                AwesomeClasses.Add(AwesomeCache.Get(args.Key));
-            };
             DataContext = this;
         }
-
-        public ObservableCollection<AwesomeClass> AwesomeClasses { get; set; }
     }
 }
